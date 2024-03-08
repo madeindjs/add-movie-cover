@@ -1,13 +1,28 @@
 {
   "name": "movie-cover",
   "version": "1.0.0",
-  "description": "",
+  "description": "Add covers to movies files.",
   "main": "main.mjs",
+  "repository": {
+    "url": "https://github.com/madeindjs/add-movie-cover"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "bin": {
+    "movie-cover": "main.mjs"
+  },
+  "keywords": [
+    "movie",
+    "ffmpeg",
+    "cover",
+    "the-movie-db"
+  ],
+  "author": {
+    "name": "Alexandre Rousseau",
+    "email": "alexandre@rsseau.fr",
+    "url": "https://rsseau.fr"
+  },
   "license": "ISC",
   "dependencies": {
     "execa": "^8.0.1",
