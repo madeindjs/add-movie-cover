@@ -1,0 +1,17 @@
+{
+  "name": "movie-cover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "execa": "^8.0.1",
+    "moviedb-promise": "^4.0.3",
+    "oleoo": "^1.0.16"
+  }
+}
