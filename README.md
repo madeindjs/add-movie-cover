@@ -25,3 +25,5 @@ THEMOVIEDB_KEY="YOUR-API-KEY" node main.mjs ./movies/Halloween.II.2009.THEATRICA
 - [ ] support `.mp4` files (and maybe other formats)
 - [ ] overrides the current file (it's currently write a new one in `/tmp`)
 - [ ] improve the TUI using [terminal-image](https://www.npmjs.com/package/terminal-image) to ask confirmation before doing the change
+- [ ] provide a CLI build
+- [ ] publish to NPM
