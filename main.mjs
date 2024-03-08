@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import path from "node:path";
 import { addCoverToVideo } from "./ffmpeg.mjs";
 import { findMovieFromFilename } from "./moviedb.mjs";
@@ -16,5 +17,5 @@ for (const filepath of process.argv.slice(2)) {
 
   await addCoverToVideo(filepath, imageUrl);
 
-  console.log(basename, movie, imageUrl);
+  console.log("Added image", imageUrl);
 }
