@@ -1,12 +1,10 @@
 import { $ } from "execa";
+import crypto from "node:crypto";
 import os from "node:os";
 import path from "node:path";
 
-import crypto from "crypto";
-import Path from "path";
-
 function getTmpFile(ext) {
-  return Path.join(os.tmpdir(), `movie-cover.${crypto.randomBytes(6).readUIntLE(0, 6).toString(36)}.${ext}`);
+  return path.join(os.tmpdir(), `movie-cover.${crypto.randomBytes(6).readUIntLE(0, 6).toString(36)}.${ext}`);
 }
 
 /**
