@@ -1,5 +1,7 @@
 # Movie cover
 
+[![npm version](https://badge.fury.io/js/movie-cover.svg)](https://badge.fury.io/js/movie-cover)
+
 Add covers to movies files:
 
 1. Parse the scene / p2p release name from the filename
@@ -7,6 +9,14 @@ Add covers to movies files:
 3. Use [ffmpeg](https://ffmpeg.org/) to add a cover to the file
 
 ## Setup
+
+With NPM
+
+```sh
+npm i movie-cover
+```
+
+Locally
 
 ```sh
 git clone https://github.com/madeindjs/add-movie-cover.git
@@ -19,11 +29,10 @@ npm link
 ## Usage
 
 ```sh
-THEMOVIEDB_KEY="YOUR-API-KEY" node main.mjs ./movies/Halloween.II.2009.THEATRICAL.Cut.MULTi3.1080p.Bluray.HDLight-Zone80.mkv
+THEMOVIEDB_KEY="YOUR-API-KEY" movie-cover ./movies/Halloween.II.2009.THEATRICAL.Cut.MULTi3.1080p.Bluray.HDLight-Zone80.mkv
 ```
 
 ## Todo
 
 - [ ] support `.mp4` files (and maybe other formats)
 - [ ] improve the TUI using [terminal-image](https://www.npmjs.com/package/terminal-image) to ask confirmation before doing the change
-- [ ] publish to NPM
