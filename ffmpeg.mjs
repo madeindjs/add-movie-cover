@@ -1,6 +1,7 @@
 import { $ } from "execa";
+import mime from "mime/lite";
 import crypto from "node:crypto";
-import fs from "node:fs/promises";
+import { rename } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 
@@ -17,10 +18,13 @@ function getTmpFile(ext) {
 export async function addCoverToVideo(file, cover) {
   const tmpFile = getTmpFile(path.extname(file));
 
-  const { stdout, stderr, failed } =
-    await $`ffmpeg -i ${file} -attach ${cover} -map 0 -c copy -metadata:s:t mimetype="image/jpg" -metadata:s:t:0 filename="cover.jpg" ${tmpFile}`;
+  const coverMime = mime.getType(cover);
+  if (!coverMime) throw Error("Mimetype of the cover was not detected");
+
+  const { stderr, failed } =
+    await $`ffmpeg -i ${file} -attach ${cover} -map 0 -c copy -metadata:s:t mimetype="${coverMime}" -metadata:s:t:0 filename="cover.jpg" ${tmpFile}`;
 
   if (failed) throw Error(stderr);
 
-  await fs.rename(tmpFile, file);
+  await rename(tmpFile, file);
 }

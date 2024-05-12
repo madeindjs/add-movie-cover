@@ -1,8 +1,8 @@
 {
   "name": "movie-cover",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Add covers to movies files.",
-  "main": "main.mjs",
+  "main": "lib.mjs",
   "repository": {
     "url": "https://github.com/madeindjs/add-movie-cover"
   },
@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "movie-cover": "main.mjs"
+    "movie-cover": "cli.mjs"
   },
   "keywords": [
     "movie",
@@ -26,6 +26,7 @@
   "license": "ISC",
   "dependencies": {
     "execa": "^8.0.1",
+    "mime": "^4.0.3",
     "moviedb-promise": "^4.0.3",
     "oleoo": "^1.0.16"
   }
